@@ -1,0 +1,22 @@
+<div class="container-fluid ">
+    <form [formGroup]="signupForm"(ngSubmit)="signupSubmit()"class="m-5">
+        <!-- <div class="alert alert-info" role="alert">
+            {{message}}
+          </div> -->
+        <h1 class="text-primary">Registration</h1>
+        <hr>
+        
+        <label>Name</label>
+        <input type="text" class="form-control"placeholder="Enter Name"formControlName="name"><br>
+        <span *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched"
+        class="text-danger border-dangerz">
+        Name is required.
+        </span>
+        <label >Email</label>
+        <input type="email" class="form-control"placeholder="Enter Email"formControlName="email"><br><br>
+        <label>Password</label>
+        <input type="password" class="form-control"placeholder="Enter Password"formControlName="password"><br><br>
+        <input type="submit"value="Register"class="form-control btn btn-warning">
+        <br><br>
+    </form>
+    </div>
